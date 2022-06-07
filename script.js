@@ -1,8 +1,11 @@
 let userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
 let wrongInput = false;
+let gameArray = ["rock", "paper", "scissors"];
+let computerAnswer = "string";
     
 inputLowerCase();
 checkInput();
+computerPlay();
 
 
 function wrongPrompt(){
@@ -25,6 +28,12 @@ if (userPromptInput !== "paper" && userPromptInput !== "rock" && userPromptInput
     wrongInput = false;
 } 
 } 
+
+function computerPlay(){
+    randomNumber = Math.floor(Math.random()*gameArray.length);
+    computerAnswer = gameArray[randomNumber];
+    console.log(computerAnswer);
+}
 
 
 
