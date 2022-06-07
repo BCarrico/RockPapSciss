@@ -6,6 +6,7 @@ let computerScore = 0;
 
     
 game();
+gameWinner();
 
 function getUserInput(){
     userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
@@ -49,25 +50,42 @@ function playRound(player, computer){
     if (userPromptInput === computerAnswer){
         console.log("You tied... " + userPromptInput + " is the same as " + computerAnswer)
     } else if (userPromptInput === "rock" && computerAnswer === "scissors") {
-        console.log("You win! Rock beats Scissors")
+        console.log("You win! Rock beats Scissors");
+        playerScore++;
     } else if (userPromptInput === "paper" && computerAnswer === "rock"){
-        console.log("You win! Paper beats Rock")
+        console.log("You win! Paper beats Rock");
+        playerScore++;
     } else if (userPromptInput === "scissors" && computerAnswer === "paper"){
-        console.log("You win! Scissors beat paper")
+        console.log("You win! Scissors beat paper");
+        playerScore++;
     } else if (userPromptInput === "rock" && computerAnswer === "paper"){
-        console.log("You lose! Paper beats rock")
+        console.log("You lose! Paper beats rock");
+        computerScore++;
     } else if (userPromptInput === "paper" && computerAnswer === "scissors"){
-        console.log("You lose! Scissors beat rock")
+        console.log("You lose! Scissors beat rock");
+        computerScore++;
     } else if (userPromptInput === "scissors" && computerAnswer === "rock"){
-        console.log("You lose! Rock beats scissors")
+        console.log("You lose! Rock beats scissors");
+        computerScore++;
     } else {
         console.log("playRound error")
     }
 } 
 
+function gameWinner(int, int){
+    if (playerScore === computerScore){
+        console.log("Wow, you tied after all that! Best of 7?");
+    } else if (playerScore > computerScore){
+        console.log("Nice job! You won best of 5! Score was Player " + playerScore +" v Computer score of " + computerScore); 
+    } else {
+        console.log("Uh oh, sorry, but you lost. Score was Player " + playerScore +" v Computer score of " + computerScore);
+    }
+}
+
 function game(){
     for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) { 
         getUserInput();
+        console.log(playerScore, computerScore);
     }
 }
 
