@@ -1,9 +1,17 @@
-let userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
 let wrongInput = false;
 let gameArray = ["rock", "paper", "scissors"];
 let computerAnswer = "string";
+let playerScore = 0;
+let computerScore = 0;
+
     
-inputLowerCase();
+game();
+
+function getUserInput(){
+    userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
+    userPromptInput = userPromptInput.toLowerCase();
+    checkInput();
+}
 
 function inputLowerCase(){
     userPromptInput = userPromptInput.toLowerCase();
@@ -56,6 +64,13 @@ function playRound(player, computer){
         console.log("playRound error")
     }
 } 
+
+function game(){
+    for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) { 
+        getUserInput();
+    }
+}
+
 
 
 
