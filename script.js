@@ -4,14 +4,30 @@ let computerAnswer = "string";
 let playerScore = 0;
 let computerScore = 0;
 
-    
+const rockBtn = document.querySelector('.rockButton');
+rockBtn.addEventListener('click', () => {
+    console.log("rock clicked");
+})  
+
+const paperBtn = document.querySelector('.paperButton');
+paperBtn.addEventListener('click', () => {
+    console.log("paper clicked");
+})
+
+const scissorsBtn = document.querySelector('.scissorsButton');
+scissorsBtn.addEventListener('click', () => {
+    console.log("scissors clicked");
+})
+
 game();
 gameWinner();
 
 function getUserInput(){
-    userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
+    
+   
+    /*userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
     userPromptInput = userPromptInput.toLowerCase();
-    checkInput();
+    checkInput();*/
 }
 
 function inputLowerCase(){
