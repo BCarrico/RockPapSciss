@@ -7,30 +7,36 @@ let computerScore = 0;
 const rockBtn = document.querySelector('.rockButton');
 rockBtn.addEventListener('click', () => {
     console.log("rock clicked");
+    userPromptInput = "rock";
+    computerPlay();
 })  
 
 const paperBtn = document.querySelector('.paperButton');
 paperBtn.addEventListener('click', () => {
     console.log("paper clicked");
+    userPromptInput = "paper";
+    computerPlay();
 })
 
 const scissorsBtn = document.querySelector('.scissorsButton');
 scissorsBtn.addEventListener('click', () => {
     console.log("scissors clicked");
+    userPromptInput = "scissors";
+    computerPlay();
 })
 
-game();
-gameWinner();
+/*game();*/
+/*gameWinner();*/
 
-function getUserInput(){
+/*function getUserInput(){
     
    
-    /*userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
+    userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
     userPromptInput = userPromptInput.toLowerCase();
-    checkInput();*/
-}
+    checkInput();
+}*/
 
-function inputLowerCase(){
+/*function inputLowerCase(){
     userPromptInput = userPromptInput.toLowerCase();
     console.log("Your choice is " + userPromptInput);
     checkInput();
@@ -46,7 +52,7 @@ if (userPromptInput !== "paper" && userPromptInput !== "rock" && userPromptInput
     wrongInput = false;
     computerPlay();
 } 
-} 
+} */
 
 function computerPlay(){
     randomNumber = Math.floor(Math.random()*gameArray.length);
@@ -55,12 +61,12 @@ function computerPlay(){
     playRound();
 }
 
-function wrongPrompt(){
+/*function wrongPrompt(){
     if (wrongInput === true) {
     userPromptInput = window.prompt("Not an available choice. Try again. Rock, Paper, or Scissors?");
     inputLowerCase();
     }
-} 
+} */
 
 function playRound(player, computer){
     if (userPromptInput === computerAnswer){
@@ -98,12 +104,12 @@ function gameWinner(int, int){
     }
 }
 
-function game(){
+/*function game(){
     for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) { 
         getUserInput();
         console.log(playerScore, computerScore);
     }
-}
+}*/
 
 
 
