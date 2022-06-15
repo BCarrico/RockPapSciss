@@ -43,6 +43,7 @@ function checkNoWinner(){
     }
 }
 
+
 function playRound(player, computer){
     if (userPromptInput === computerAnswer){
         console.log("You tied... " + userPromptInput + " is the same as " + computerAnswer)
@@ -72,11 +73,22 @@ function playRound(player, computer){
 function gameWinner(int, int){
     if (playerScore === 5){
         console.log("Nice job! You won best of 5! Score was Player " + playerScore +" v Computer score of " + computerScore); 
+        resultsContainer.textContent = "Nice job! You won best of 5! Score was Player " + playerScore +" vs Computer score of " + computerScore;
+        currentScoreContainer.textContent = "Player Score: " + playerScore + "                  vs                  Computer Score: " + computerScore;
         noWinner = false;
     } else if (computerScore === 5){
         console.log("Uh oh, sorry, but you lost. Score was Player " + playerScore +" v Computer score of " + computerScore); 
+        resultsContainer.textContent = "Nice job! You won best of 5! Score was Player " + playerScore +" vs Computer score of " + computerScore;
+        currentScoreContainer.textContent = "Player Score: " + playerScore + "                  vs                  Computer Score: " + computerScore;
         noWinner = false;
     } else {
-        noWinner = true;
+        currentScoreContainer.textContent = "Player Score: " + playerScore + "                  vs                  Computer Score: " + computerScore;
+        noWinner = true;  
     }
 }
+
+
+/* DOM Text Events */
+const resultsContainer = document.querySelector('.results');
+const currentScoreContainer = document.querySelector('.currentScore');
+/*const restartButton = document.createElement('button');*/
