@@ -25,34 +25,6 @@ scissorsBtn.addEventListener('click', () => {
     computerPlay();
 })
 
-/*game();*/
-/*gameWinner();*/
-
-/*function getUserInput(){
-    
-   
-    userPromptInput = window.prompt("Do you choose Rock, Paper, or Scissors?");
-    userPromptInput = userPromptInput.toLowerCase();
-    checkInput();
-}*/
-
-/*function inputLowerCase(){
-    userPromptInput = userPromptInput.toLowerCase();
-    console.log("Your choice is " + userPromptInput);
-    checkInput();
-}
-
-function checkInput(){
-if (userPromptInput !== "paper" && userPromptInput !== "rock" && userPromptInput !== "scissors"){
-    console.log(userPromptInput);
-    wrongInput = true;
-    console.log(wrongInput);
-    wrongPrompt();
-} else {
-    wrongInput = false;
-    computerPlay();
-} 
-} */
 
 function computerPlay(){
     randomNumber = Math.floor(Math.random()*gameArray.length);
@@ -61,12 +33,6 @@ function computerPlay(){
     playRound();
 }
 
-/*function wrongPrompt(){
-    if (wrongInput === true) {
-    userPromptInput = window.prompt("Not an available choice. Try again. Rock, Paper, or Scissors?");
-    inputLowerCase();
-    }
-} */
 
 function playRound(player, computer){
     if (userPromptInput === computerAnswer){
@@ -103,13 +69,6 @@ function gameWinner(int, int){
         console.log("Uh oh, sorry, but you lost. Score was Player " + playerScore +" v Computer score of " + computerScore);
     }
 }
-
-/*function game(){
-    for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) { 
-        getUserInput();
-        console.log(playerScore, computerScore);
-    }
-}*/
 
 
 
