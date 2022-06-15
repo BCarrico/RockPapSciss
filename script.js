@@ -3,36 +3,45 @@ let gameArray = ["rock", "paper", "scissors"];
 let computerAnswer = "string";
 let playerScore = 0;
 let computerScore = 0;
+let noWinner = true;
 
 const rockBtn = document.querySelector('.rockButton');
 rockBtn.addEventListener('click', () => {
     console.log("rock clicked");
     userPromptInput = "rock";
-    computerPlay();
+    checkNoWinner();
 })  
 
 const paperBtn = document.querySelector('.paperButton');
 paperBtn.addEventListener('click', () => {
     console.log("paper clicked");
     userPromptInput = "paper";
-    computerPlay();
+    checkNoWinner();
 })
 
 const scissorsBtn = document.querySelector('.scissorsButton');
 scissorsBtn.addEventListener('click', () => {
     console.log("scissors clicked");
     userPromptInput = "scissors";
-    computerPlay();
+    checkNoWinner();
 })
-
 
 function computerPlay(){
     randomNumber = Math.floor(Math.random()*gameArray.length);
     computerAnswer = gameArray[randomNumber];
     console.log("Computer choice is " + computerAnswer);
     playRound();
+    gameWinner();
 }
 
+function checkNoWinner(){
+    console.log(noWinner);
+    if (noWinner != false){
+        computerPlay();
+    } else {
+        console.log('Game Over, try again?');
+    }
+}
 
 function playRound(player, computer){
     if (userPromptInput === computerAnswer){
@@ -61,16 +70,13 @@ function playRound(player, computer){
 } 
 
 function gameWinner(int, int){
-    if (playerScore === computerScore){
-        console.log("Wow, you tied after all that! Best of 7?");
-    } else if (playerScore > computerScore){
+    if (playerScore === 5){
         console.log("Nice job! You won best of 5! Score was Player " + playerScore +" v Computer score of " + computerScore); 
+        noWinner = false;
+    } else if (computerScore === 5){
+        console.log("Uh oh, sorry, but you lost. Score was Player " + playerScore +" v Computer score of " + computerScore); 
+        noWinner = false;
     } else {
-        console.log("Uh oh, sorry, but you lost. Score was Player " + playerScore +" v Computer score of " + computerScore);
+        noWinner = true;
     }
 }
-
-
-
-
-
